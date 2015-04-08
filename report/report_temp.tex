@@ -1,15 +1,19 @@
 \documentclass[12pt,a4paper]{article}
 
 \usepackage{graphicx} % Required for the inclusion of images
-\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage[numbers,sort&compress]{natbib}
 \usepackage{amsmath} % Required for some math elements
 \usepackage{ctex}
 \usepackage{indentfirst}
+\usepackage[left=2.5cm,right=2.5cm,top=3cm,bottom=3cm]{geometry}
+\usepackage{subfigure}
 
-\setlength\parindent{2em} % Removes all indentation from paragraphs
+\setlength\parindent{2em}
 \renewcommand{\labelenumi}{\alph{enumi}.}
 \fontfamily{song}
-\fontfamily{Times}
+\fontfamily{times}
+\renewcommand\figurename{图}
+\renewcommand\tablename{表}
 
 
 \title{一级题目 \\ 二级题目 \\ 三级题目} % Title
@@ -43,7 +47,7 @@ item2
 \begin{figure}[h]
 \begin{center}
 \includegraphics[width=0.65\textwidth]{placeholder} % Include the image placeholder.png
-\caption{Figure caption.}
+\caption{Figure caption.} label{fig2} % label 用于引用\ref{fig2}
 \end{center}
 \end{figure}
 
@@ -56,7 +60,18 @@ itme3
 \end{item}
 \end{enumerate}
 
+\subsubsection{三级标题}
+测试图片如图\ref{fig1}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=5cm]{pic}
+    \caption{test图片} \label{fig1}
+\end{figure}
+\par 测试行内$d(X,Y)=\max \limits_{1\leq i\leq N}\left|x_i-y_i\right|$
+\par 测试行内矩阵$M=\begin{bmatrix}1 & s_{12} & \cdots & s_{1N} \\ s_{21} & 1 & \cdots & s_{2N} \\ \cdots & \cdots & s_{ij} & \cdots \\ s_{N1} & s_{N2} & \cdots & 1\end{bmatrix}$，
 
+
+\newpage
 \bibliographystyle{plain}
 
 \bibliography{Report_ref}
